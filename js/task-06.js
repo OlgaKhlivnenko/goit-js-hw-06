@@ -8,10 +8,11 @@ function onInputChange(event) {
     console.log(event.currentTarget.value);
     console.log(event.currentTarget.value.length);
     if (event.currentTarget.value.length === Number(length)) {
-        input.classList.add(`valid`);
         input.classList.remove(`invalid`);
+        input.classList.add(`valid`);
+        
     }
-  
-    input.classList.add(`invalid`);
-    input.classList.remove(`valid`);
+    else {
+        input.classList.add(`invalid`);
+    }
 }
