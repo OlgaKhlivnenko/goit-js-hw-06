@@ -14,5 +14,6 @@ function onInputChange(event) {
     }
     else {
         input.classList.add(`invalid`);
+        input.classList.remove(`valid`);
     }
 }

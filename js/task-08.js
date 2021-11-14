@@ -11,6 +11,7 @@ form.addEventListener(`submit`, onFormSubmit);
         
     if (email === "" || password === "") {
         alert(`Все поля должны быть заполнены!`)
+        return
         }
   
         const formData = { email, password };
