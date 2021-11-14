@@ -1,19 +1,18 @@
 const btns = document.querySelectorAll(`button`);
- 
+const currentValue = document.querySelector(`#value`);
+let counterValue = 0;
+currentValue.textContent = counterValue;
 btns.forEach(btn => {
     btn.addEventListener(`click`, function () {
-        const action = this.dataset.action;
-        console.log(action);
-        const spanEl = document.querySelector(`#value`);
-        const currentValue = Number(spanEl.textContent);
-        let counterValue = 0;
-
+        const action = btn.dataset.action;
+              
         if (action === "increment") {
-            counterValue = currentValue + 1;
+            counterValue += 1;
+           currentValue.textContent = counterValue;
         }
-        else {
-            counterValue = currentValue - 1 > 0 ? currentValue - 1 : 0;
+        if (action === "decrement") {
+            counterValue -= 1;
+           currentValue.textContent = counterValue;
         }
-        spanEl.textContent = counterValue;
-    });
+    })
 })
