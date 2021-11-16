@@ -4,10 +4,7 @@ const nameLable = document.querySelector(`#name-output`);
 input.addEventListener(`input`, onInputChange);
 function onInputChange(event) {
     nameLable.textContent = event.currentTarget.value;
-}
-input.addEventListener(`keypress`, onInputEmpty);
-function onInputEmpty(evt) {
-    if (evt.currentTarget.value.length === 0) {
-        input.value = nameLable.textContent;
+    if (event.currentTarget.value === "") {
+        nameLable.textContent = "Anonymous";
     }
 }
